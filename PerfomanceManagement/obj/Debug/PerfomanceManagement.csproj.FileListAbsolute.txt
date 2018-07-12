@@ -1,0 +1,40 @@
+c:\users\vidif\onedrive\documents\visual studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\bin\Debug\PerfomanceManagement.exe.config
+c:\users\vidif\onedrive\documents\visual studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\bin\Debug\PerfomanceManagement.exe
+c:\users\vidif\onedrive\documents\visual studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\bin\Debug\PerfomanceManagement.pdb
+c:\users\vidif\onedrive\documents\visual studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.Home.resources
+c:\users\vidif\onedrive\documents\visual studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.Properties.Resources.resources
+c:\users\vidif\onedrive\documents\visual studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.csproj.GenerateResource.Cache
+c:\users\vidif\onedrive\documents\visual studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.exe
+c:\users\vidif\onedrive\documents\visual studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.pdb
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.csprojResolveAssemblyReference.cache
+C:\Users\vidif\Documents\Visual Studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\bin\Debug\PerfomanceManagement.exe.config
+C:\Users\vidif\Documents\Visual Studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.exe
+C:\Users\vidif\Documents\Visual Studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.pdb
+C:\Users\vidif\Documents\Visual Studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\bin\Debug\PerfomanceManagement.exe
+C:\Users\vidif\Documents\Visual Studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\bin\Debug\PerfomanceManagement.pdb
+C:\Users\vidif\Documents\Visual Studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.DataManagement.resources
+C:\Users\vidif\Documents\Visual Studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.Home.resources
+C:\Users\vidif\Documents\Visual Studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.Properties.Resources.resources
+C:\Users\vidif\Documents\Visual Studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.csproj.GenerateResource.Cache
+C:\Users\vidif\Documents\Visual Studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\bin\Debug\Google.Protobuf.dll
+C:\Users\vidif\Documents\Visual Studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\bin\Debug\MySql.Data.xml
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\bin\Debug\MySql.Data.dll
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\bin\Debug\Google.Protobuf.dll
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\bin\Debug\MySql.Data.xml
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.DataManagement.resources
+C:\Users\vidif\Documents\Visual Studio 2015\Projects\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.csprojResolveAssemblyReference.cache
+C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\bin\Debug\PerfomanceManagement.exe.config
+C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\bin\Debug\PerfomanceManagement.exe
+C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\bin\Debug\PerfomanceManagement.pdb
+C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.DataManagement.resources
+C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.Home.resources
+C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.Properties.Resources.resources
+C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.csproj.GenerateResource.cache
+C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.csproj.CoreCompileInputs.cache
+C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.csproj.CopyComplete
+C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.exe
+C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.pdb
+C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\bin\Debug\MySql.Data.dll
+C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\bin\Debug\Google.Protobuf.dll
+C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\bin\Debug\MySql.Data.xml
+C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\obj\Debug\PerfomanceManagement.csprojAssemblyReference.cache
