@@ -194,6 +194,8 @@
             this.Chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.PlotPosition;
+            chartArea1.BorderColor = System.Drawing.Color.LightGray;
             chartArea1.Name = "ChartArea1";
             this.Chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";

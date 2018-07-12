@@ -16,12 +16,11 @@ namespace PerfomanceManagement
     public partial class DataManagement : Form
     {
         MySqlConnection con = new MySqlConnection("SERVER=localhost;" + "DATABASE=dbpacket;" + "UID=root;" + "PASSWORD=;" + "SSL Mode=none;");
-
+        
         public DataManagement()
         {
             InitializeComponent();
         }
-
         private void load()
         {
             Chart1.Series.Clear();
@@ -30,7 +29,6 @@ namespace PerfomanceManagement
             string query = "SELECT `tbldata_id`,DATE_FORMAT(Date,'%d/%m/%Y') AS Date, `Hour`, `RBS`, `RNC`, `FRAMESLOST`, `DCH_FRAMELOST`, `pmEdchIubLimitingRatio`, `IUB_CAP_HS_LIMIT` FROM `tbldata`";
             data.dgv(query, "", dgvTampil);
         }
-
         private DataTable GetData()
         {
             DataTable dataTable = new DataTable();
@@ -119,12 +117,16 @@ namespace PerfomanceManagement
             try
             {
                 Chart1.DataBindCrossTable(GetDataSpecific().DefaultView, "RBS", "Date", "FRAMESLOST", "");
-                Chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+                string query = "SELECT `RBS`,DATE_FORMAT(Date,'%d/%m/%Y') AS Date,`Hour`,MAX(FRAMESLOST) AS FRAMESLOST FROM `tbldata` where RBS = '" + txtObject.Text + "' && Hour = '" + txtRange2.Text + "' GROUP BY RBS,Date";
+                data.dgv(query, "", dgvTampil);
+                Chart1.Series[0].Color = Color.MediumPurple;
+                Chart1.Series[0].ChartType = SeriesChartType.Spline;
                 con.Close();
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Please select a data : "+ex.Message,"The value is empty!" ,MessageBoxButtons.OK,MessageBoxIcon.Information);
+                con.Close();
             }
             
             txtObject.Text = "";
