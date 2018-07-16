@@ -21,21 +21,21 @@ namespace PerfomanceManagement
         }
         void loadLoss()
         {
-            string query = "Select RBS,FRAMESLOST,Hour,Date from tbldata order by FRAMESLOST desc limit 10 offset 1";
+            string query = "SELECT `RBS`,MAX(FRAMESLOST) AS `FRAMESLOST`,DATE_FORMAT(Date,'%d/%m/%Y') AS `Date`, `Hour` FROM `tbldata` GROUP BY RBS ORDER BY FRAMESLOST limit 10 OFFSET 1";
             data.dgv(query, "", dgvLoss);
         }
         void loadDCH()
         {
-            string query = "Select RBS,DCH_FRAMELOST,Hour,Date from tbldata order by DCH_FRAMELOST desc limit 10 offset 1";
+            string query = "SELECT `RBS`,MAX(DCH_FRAMELOST) AS `DCH_FRAMELOST`,DATE_FORMAT(Date,'%d/%m/%Y') AS `Date`, `Hour` FROM `tbldata` GROUP BY RBS ORDER BY DCH_FRAMELOST limit 10 OFFSET 1";
             data.dgv(query, "", dgvDCH);
         }
         private DataTable GetData()
         {
             DataTable dataTable = new DataTable();
 
-            using (MySqlCommand cmd = new MySqlCommand("SELECT `RBS`,DATE_FORMAT(Date,'%d/%m/%Y') AS `Date`, `Hour`,MAX(FRAMESLOST) AS `FRAMESLOST` FROM `tbldata` GROUP BY RBS limit 10", con))
+            using (MySqlCommand cmd = new MySqlCommand("SELECT `RBS`,DATE_FORMAT(Date,'%d/%m/%Y') AS `Date`, `Hour`,MAX(FRAMESLOST) AS `FRAMESLOST` FROM `tbldata` GROUP BY RBS ORDER BY FRAMESLOST limit 10 OFFSET 1", con))
             {
-                cmd.CommandText = "SELECT `RBS`,DATE_FORMAT(Date,'%d/%m/%Y') AS `Date`, `Hour`,MAX(FRAMESLOST) AS `FRAMESLOST` FROM `tbldata` GROUP BY RBS limit 10";
+                cmd.CommandText = "SELECT `RBS`,DATE_FORMAT(Date,'%d/%m/%Y') AS `Date`, `Hour`,MAX(FRAMESLOST) AS `FRAMESLOST` FROM `tbldata` GROUP BY RBS ORDER BY FRAMESLOST limit 10 OFFSET 1";
                 con.Open();
                 MySqlDataReader reader = cmd.ExecuteReader();
                 dataTable.Load(reader);
@@ -43,11 +43,11 @@ namespace PerfomanceManagement
             return dataTable;
         }
         private void designChart()
-        {
-            for (int i = 0; i < 19; i++)
+        {  
+           for(int i = 0;i<10;i++)
             {
-                Chart1.Series[i].ChartType = SeriesChartType.Spline;
-            }
+                Chart1.Series[i].ChartType = SeriesChartType.Line;
+            }           
         }
         private void dataManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -64,6 +64,8 @@ namespace PerfomanceManagement
         private void Home_Load(object sender, EventArgs e)
         {
             Chart1.Series.Clear();
+            lbl3.Text = "";
+            lbl4.Text = "";
             Chart1.DataBindCrossTable(GetData().DefaultView, "RBS", "Date", "FRAMESLOST", "");
             loadLoss();
             loadDCH();            
@@ -118,6 +120,7 @@ namespace PerfomanceManagement
             {
                 string text = s.LegendText != "" ? s.LegendText : s.Name;
                 lbl4.Text = text;
+                lbl3.Text = "";
             }
             if (result.PointIndex > -1 && result.ChartArea != null)
             {
