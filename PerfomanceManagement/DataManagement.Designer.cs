@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
@@ -45,12 +46,15 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtRange1 = new System.Windows.Forms.TextBox();
             this.txtObject = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtRange2 = new System.Windows.Forms.TextBox();
-            this.txtRange1 = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lbl3 = new System.Windows.Forms.Label();
+            this.lbl4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTampil)).BeginInit();
             this.panel1.SuspendLayout();
@@ -178,6 +182,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.Color.DarkSalmon;
+            this.groupBox2.Controls.Add(this.lbl4);
+            this.groupBox2.Controls.Add(this.lbl3);
             this.groupBox2.Controls.Add(this.Chart1);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -194,9 +200,9 @@
             this.Chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.PlotPosition;
             chartArea1.BorderColor = System.Drawing.Color.LightGray;
             chartArea1.Name = "ChartArea1";
+            chartArea1.ShadowColor = System.Drawing.Color.LightGray;
             this.Chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             legend1.Title = "RBS";
@@ -204,24 +210,27 @@
             this.Chart1.Legends.Add(legend1);
             this.Chart1.Location = new System.Drawing.Point(6, 29);
             this.Chart1.Name = "Chart1";
+            this.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             this.Chart1.Size = new System.Drawing.Size(664, 393);
             this.Chart1.TabIndex = 2;
             title1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
             title1.Name = "FRAMESLOST";
             title1.Text = "FRAMESLOST";
             this.Chart1.Titles.Add(title1);
+            this.Chart1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Chart1_MouseClick);
+            this.Chart1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Chart1_MouseMove);
             // 
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.BackColor = System.Drawing.Color.LavenderBlush;
+            this.groupBox3.Controls.Add(this.txtRange1);
             this.groupBox3.Controls.Add(this.txtObject);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.txtRange2);
-            this.groupBox3.Controls.Add(this.txtRange1);
             this.groupBox3.ForeColor = System.Drawing.Color.DarkSalmon;
             this.groupBox3.Location = new System.Drawing.Point(17, 428);
             this.groupBox3.Name = "groupBox3";
@@ -229,6 +238,14 @@
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Navigation";
+            // 
+            // txtRange1
+            // 
+            this.txtRange1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRange1.Location = new System.Drawing.Point(25, 196);
+            this.txtRange1.Name = "txtRange1";
+            this.txtRange1.Size = new System.Drawing.Size(166, 28);
+            this.txtRange1.TabIndex = 11;
             // 
             // txtObject
             // 
@@ -282,13 +299,36 @@
             this.txtRange2.Size = new System.Drawing.Size(153, 28);
             this.txtRange2.TabIndex = 2;
             // 
-            // txtRange1
+            // toolTip1
             // 
-            this.txtRange1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRange1.Location = new System.Drawing.Point(20, 196);
-            this.txtRange1.Name = "txtRange1";
-            this.txtRange1.Size = new System.Drawing.Size(153, 28);
-            this.txtRange1.TabIndex = 1;
+            this.toolTip1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.toolTip1.ForeColor = System.Drawing.Color.White;
+            // 
+            // lbl3
+            // 
+            this.lbl3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lbl3.AutoSize = true;
+            this.lbl3.BackColor = System.Drawing.Color.White;
+            this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3.ForeColor = System.Drawing.Color.Black;
+            this.lbl3.Location = new System.Drawing.Point(622, 356);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(30, 18);
+            this.lbl3.TabIndex = 5;
+            this.lbl3.Text = "lbl1";
+            // 
+            // lbl4
+            // 
+            this.lbl4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lbl4.AutoSize = true;
+            this.lbl4.BackColor = System.Drawing.Color.White;
+            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl4.ForeColor = System.Drawing.Color.Black;
+            this.lbl4.Location = new System.Drawing.Point(622, 386);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(30, 18);
+            this.lbl4.TabIndex = 6;
+            this.lbl4.Text = "lbl1";
             // 
             // DataManagement
             // 
@@ -312,6 +352,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Chart1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -331,14 +372,17 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtRange2;
-        private System.Windows.Forms.TextBox txtRange1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem BackToolStrip;
         private System.Windows.Forms.DataGridView dgvTampil;
         private System.Windows.Forms.DataVisualization.Charting.Chart Chart1;
         private System.Windows.Forms.TextBox txtObject;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.TextBox txtRange1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label lbl3;
+        private System.Windows.Forms.Label lbl4;
     }
 }

@@ -30,14 +30,13 @@
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.grpDashboard = new System.Windows.Forms.GroupBox();
             this.dgvDCH = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgvLoss = new System.Windows.Forms.DataGridView();
+            this.Chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,13 +46,16 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl3 = new System.Windows.Forms.Label();
+            this.lbl4 = new System.Windows.Forms.Label();
             this.grpDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDCH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoss)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Chart1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpDashboard
@@ -64,7 +66,6 @@
             this.grpDashboard.Controls.Add(this.dgvDCH);
             this.grpDashboard.Controls.Add(this.label3);
             this.grpDashboard.Controls.Add(this.label2);
-            this.grpDashboard.Controls.Add(this.chart1);
             this.grpDashboard.Controls.Add(this.dgvLoss);
             this.grpDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDashboard.ForeColor = System.Drawing.Color.Black;
@@ -81,12 +82,12 @@
             this.dgvDCH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDCH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDCH.GridColor = System.Drawing.Color.IndianRed;
-            this.dgvDCH.Location = new System.Drawing.Point(20, 495);
+            this.dgvDCH.Location = new System.Drawing.Point(20, 400);
             this.dgvDCH.Name = "dgvDCH";
             this.dgvDCH.ReadOnly = true;
             this.dgvDCH.RowHeadersWidth = 10;
             this.dgvDCH.RowTemplate.Height = 24;
-            this.dgvDCH.Size = new System.Drawing.Size(370, 214);
+            this.dgvDCH.Size = new System.Drawing.Size(370, 306);
             this.dgvDCH.TabIndex = 5;
             // 
             // label3
@@ -95,7 +96,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(20, 472);
+            this.label3.Location = new System.Drawing.Point(20, 377);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(133, 20);
             this.label3.TabIndex = 4;
@@ -108,28 +109,12 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(20, 232);
+            this.label2.Location = new System.Drawing.Point(20, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(167, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Packet Loss Ranking";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(20, 30);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(370, 195);
-            this.chart1.TabIndex = 2;
-            this.chart1.Text = "chart1";
             // 
             // dgvLoss
             // 
@@ -138,13 +123,27 @@
             this.dgvLoss.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvLoss.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLoss.GridColor = System.Drawing.Color.IndianRed;
-            this.dgvLoss.Location = new System.Drawing.Point(20, 255);
+            this.dgvLoss.Location = new System.Drawing.Point(20, 48);
             this.dgvLoss.Name = "dgvLoss";
             this.dgvLoss.ReadOnly = true;
             this.dgvLoss.RowHeadersWidth = 10;
             this.dgvLoss.RowTemplate.Height = 24;
-            this.dgvLoss.Size = new System.Drawing.Size(370, 214);
+            this.dgvLoss.Size = new System.Drawing.Size(370, 307);
             this.dgvLoss.TabIndex = 1;
+            // 
+            // Chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.Chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.Chart1.Legends.Add(legend1);
+            this.Chart1.Location = new System.Drawing.Point(6, 17);
+            this.Chart1.Name = "Chart1";
+            this.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            this.Chart1.Size = new System.Drawing.Size(863, 704);
+            this.Chart1.TabIndex = 2;
+            this.Chart1.Text = "chart1";
+            this.Chart1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Chart1_MouseMove);
             // 
             // panel1
             // 
@@ -231,6 +230,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.DarkSalmon;
+            this.groupBox1.Controls.Add(this.lbl4);
+            this.groupBox1.Controls.Add(this.lbl3);
+            this.groupBox1.Controls.Add(this.Chart1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(447, 115);
@@ -238,6 +240,32 @@
             this.groupBox1.Size = new System.Drawing.Size(875, 727);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
+            // 
+            // lbl3
+            // 
+            this.lbl3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lbl3.AutoSize = true;
+            this.lbl3.BackColor = System.Drawing.Color.White;
+            this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3.ForeColor = System.Drawing.Color.Black;
+            this.lbl3.Location = new System.Drawing.Point(467, 261);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(30, 18);
+            this.lbl3.TabIndex = 6;
+            this.lbl3.Text = "lbl1";
+            // 
+            // lbl4
+            // 
+            this.lbl4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lbl4.AutoSize = true;
+            this.lbl4.BackColor = System.Drawing.Color.White;
+            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl4.ForeColor = System.Drawing.Color.Black;
+            this.lbl4.Location = new System.Drawing.Point(467, 294);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(30, 18);
+            this.lbl4.TabIndex = 7;
+            this.lbl4.Text = "lbl1";
             // 
             // Home
             // 
@@ -258,13 +286,15 @@
             this.grpDashboard.ResumeLayout(false);
             this.grpDashboard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDCH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoss)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Chart1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -279,13 +309,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Chart1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem dataManagementToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvDCH;
+        private System.Windows.Forms.Label lbl4;
+        private System.Windows.Forms.Label lbl3;
     }
 }
 
