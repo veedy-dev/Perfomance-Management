@@ -61,16 +61,34 @@ namespace PerfomanceManagement
         {
             Application.Exit();
         }
+        private void load()
+        {
+            try
+            {
+                Chart1.Series.Clear();
+                lbl3.Text = "";
+                lbl4.Text = "";
+                Chart1.DataBindCrossTable(GetData().DefaultView, "RBS", "Date", "FRAMESLOST", "");
+                loadLoss();
+                loadDCH();
+                con.Close();
+                Chart1.MouseWheel += chart1_MouseWheel;
+            }
+            catch (Exception ex)
+            {
+                if (MessageBox.Show("Could not Load data! : " + ex.Message, "Connection Failed", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information) == DialogResult.Retry)
+                {
+                    load();
+                }
+                else
+                {
+                    this.Close();
+                }
+            }
+        }
         private void Home_Load(object sender, EventArgs e)
         {
-            Chart1.Series.Clear();
-            lbl3.Text = "";
-            lbl4.Text = "";
-            Chart1.DataBindCrossTable(GetData().DefaultView, "RBS", "Date", "FRAMESLOST", "");
-            loadLoss();
-            loadDCH();            
-            con.Close();
-            Chart1.MouseWheel += chart1_MouseWheel;
+            load();
         }
         private void chart1_MouseWheel(object sender, MouseEventArgs e)
         {
@@ -98,7 +116,7 @@ namespace PerfomanceManagement
                     var posYFinish = yAxis.PixelPositionToValue(e.Location.Y) + (yMax - yMin) / 4;
 
                     xAxis.ScaleView.Zoom(posXStart, posXFinish);
-                    yAxis.ScaleView.Zoom(posYStart, posYFinish);
+                    yAxis.ScaleView.Zoom(posYStart, posYFinish);                    
                 }
             }
             catch { }

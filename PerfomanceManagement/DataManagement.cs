@@ -76,25 +76,56 @@ namespace PerfomanceManagement
             txtRange1.Text = "";
             txtRange2.Text = "";
         }
-
+        private void loadform()
+        {
+            try
+            {
+                load();
+                designChart();
+                lbl3.Text = "";
+                lbl4.Text = "";
+                Chart1.ChartAreas[0].AxisY.IsStartedFromZero = false;
+                Chart1.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
+                Chart1.ChartAreas[0].AxisY.ScaleView.Zoomable = true;
+                Chart1.MouseWheel += chart1_MouseWheel;
+                chartSelectionZoom();
+                WindowState = FormWindowState.Maximized;
+            }
+            catch (Exception ex)
+            {
+                if(MessageBox.Show("Could not Load data! : " + ex.Message, "Connection Failed", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information) == DialogResult.Retry)
+                {
+                    loadform();
+                }
+                else
+                {
+                    this.Close();
+                }
+            }
+        }
         private void DataManagement_Load(object sender, EventArgs e)
         {
-            load();
-            designChart();
-            lbl3.Text = "";
-            lbl4.Text = "";
+            loadform();
+        }
+
+        private void chartSelectionZoom()
+        {
+            Chart1.ChartAreas[0].CursorX.IsUserEnabled = true;
+            Chart1.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
             Chart1.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
+            Chart1.ChartAreas[0].AxisX.ScrollBar.IsPositionedInside = true;
+
+            Chart1.ChartAreas[0].CursorY.IsUserEnabled = true;
+            Chart1.ChartAreas[0].CursorY.IsUserSelectionEnabled = true;
             Chart1.ChartAreas[0].AxisY.ScaleView.Zoomable = true;
-            Chart1.MouseWheel += chart1_MouseWheel;
-            WindowState = FormWindowState.Maximized;
+            Chart1.ChartAreas[0].AxisY.ScrollBar.IsPositionedInside = true;
         }
 
         private void chart1_MouseWheel(object sender, MouseEventArgs e)
         {
             var chart = (Chart)sender;
             var xAxis = chart.ChartAreas[0].AxisX;
-            var yAxis = chart.ChartAreas[0].AxisY;
-
+            var yAxis = chart.ChartAreas[0].AxisY;       
             try
             {
                 if (e.Delta < 0) // Scrolled down.
@@ -109,10 +140,10 @@ namespace PerfomanceManagement
                     var yMin = yAxis.ScaleView.ViewMinimum;
                     var yMax = yAxis.ScaleView.ViewMaximum;
 
-                    var posXStart = xAxis.PixelPositionToValue(e.Location.X) - (xMax - xMin) / 4;
-                    var posXFinish = xAxis.PixelPositionToValue(e.Location.X) + (xMax - xMin) / 4;
-                    var posYStart = yAxis.PixelPositionToValue(e.Location.Y) - (yMax - yMin) / 4;
-                    var posYFinish = yAxis.PixelPositionToValue(e.Location.Y) + (yMax - yMin) / 4;
+                    var posXStart = xAxis.PixelPositionToValue(e.Location.X) - (xMax - xMin) / 2;
+                    var posXFinish = xAxis.PixelPositionToValue(e.Location.X) + (xMax - xMin) / 2;
+                    var posYStart = yAxis.PixelPositionToValue(e.Location.Y) - (yMax - yMin) / 3;
+                    var posYFinish = yAxis.PixelPositionToValue(e.Location.Y) + (yMax - yMin) / 3;
 
                     xAxis.ScaleView.Zoom(posXStart, posXFinish);
                     yAxis.ScaleView.Zoom(posYStart, posYFinish);

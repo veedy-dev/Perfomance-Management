@@ -44,6 +44,8 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbl4 = new System.Windows.Forms.Label();
+            this.lbl3 = new System.Windows.Forms.Label();
             this.Chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtRange1 = new System.Windows.Forms.TextBox();
@@ -53,8 +55,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtRange2 = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.lbl3 = new System.Windows.Forms.Label();
-            this.lbl4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTampil)).BeginInit();
             this.panel1.SuspendLayout();
@@ -195,6 +195,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Graph";
             // 
+            // lbl4
+            // 
+            this.lbl4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lbl4.AutoSize = true;
+            this.lbl4.BackColor = System.Drawing.Color.White;
+            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl4.ForeColor = System.Drawing.Color.Black;
+            this.lbl4.Location = new System.Drawing.Point(622, 386);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(30, 18);
+            this.lbl4.TabIndex = 6;
+            this.lbl4.Text = "lbl1";
+            // 
+            // lbl3
+            // 
+            this.lbl3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lbl3.AutoSize = true;
+            this.lbl3.BackColor = System.Drawing.Color.White;
+            this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3.ForeColor = System.Drawing.Color.Black;
+            this.lbl3.Location = new System.Drawing.Point(622, 356);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(30, 18);
+            this.lbl3.TabIndex = 5;
+            this.lbl3.Text = "lbl1";
+            // 
             // Chart1
             // 
             this.Chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -303,32 +329,6 @@
             // 
             this.toolTip1.BackColor = System.Drawing.Color.DodgerBlue;
             this.toolTip1.ForeColor = System.Drawing.Color.White;
-            // 
-            // lbl3
-            // 
-            this.lbl3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.lbl3.AutoSize = true;
-            this.lbl3.BackColor = System.Drawing.Color.White;
-            this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.ForeColor = System.Drawing.Color.Black;
-            this.lbl3.Location = new System.Drawing.Point(622, 356);
-            this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(30, 18);
-            this.lbl3.TabIndex = 5;
-            this.lbl3.Text = "lbl1";
-            // 
-            // lbl4
-            // 
-            this.lbl4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.lbl4.AutoSize = true;
-            this.lbl4.BackColor = System.Drawing.Color.White;
-            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl4.ForeColor = System.Drawing.Color.Black;
-            this.lbl4.Location = new System.Drawing.Point(622, 386);
-            this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(30, 18);
-            this.lbl4.TabIndex = 6;
-            this.lbl4.Text = "lbl1";
             // 
             // DataManagement
             // 

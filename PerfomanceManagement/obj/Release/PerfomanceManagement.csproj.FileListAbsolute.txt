@@ -13,3 +13,18 @@ C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\obj\Release\P
 C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\obj\Release\PerfomanceManagement.csproj.CopyComplete
 C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\obj\Release\PerfomanceManagement.exe
 C:\Users\vidif\Downloads\PerfomanceManagement\PerfomanceManagement\obj\Release\PerfomanceManagement.pdb
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2017\Projects\PerfomanceManagement\PerfomanceManagement\bin\Release\PerfomanceManagement.exe.config
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2017\Projects\PerfomanceManagement\PerfomanceManagement\bin\Release\PerfomanceManagement.exe
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2017\Projects\PerfomanceManagement\PerfomanceManagement\bin\Release\PerfomanceManagement.pdb
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2017\Projects\PerfomanceManagement\PerfomanceManagement\bin\Release\MySql.Data.dll
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2017\Projects\PerfomanceManagement\PerfomanceManagement\bin\Release\Google.Protobuf.dll
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2017\Projects\PerfomanceManagement\PerfomanceManagement\bin\Release\MySql.Data.xml
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2017\Projects\PerfomanceManagement\PerfomanceManagement\obj\Release\PerfomanceManagement.DataManagement.resources
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2017\Projects\PerfomanceManagement\PerfomanceManagement\obj\Release\PerfomanceManagement.Home.resources
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2017\Projects\PerfomanceManagement\PerfomanceManagement\obj\Release\PerfomanceManagement.Properties.Resources.resources
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2017\Projects\PerfomanceManagement\PerfomanceManagement\obj\Release\PerfomanceManagement.csproj.GenerateResource.cache
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2017\Projects\PerfomanceManagement\PerfomanceManagement\obj\Release\PerfomanceManagement.csproj.CoreCompileInputs.cache
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2017\Projects\PerfomanceManagement\PerfomanceManagement\obj\Release\PerfomanceManagement.csproj.CopyComplete
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2017\Projects\PerfomanceManagement\PerfomanceManagement\obj\Release\PerfomanceManagement.exe
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2017\Projects\PerfomanceManagement\PerfomanceManagement\obj\Release\PerfomanceManagement.pdb
+C:\Users\vidif\OneDrive\Documents\Visual Studio 2017\Projects\PerfomanceManagement\PerfomanceManagement\obj\Release\PerfomanceManagement.csprojAssemblyReference.cache
