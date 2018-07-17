@@ -55,6 +55,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtRange2 = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lbl5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTampil)).BeginInit();
             this.panel1.SuspendLayout();
@@ -182,6 +183,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.Color.DarkSalmon;
+            this.groupBox2.Controls.Add(this.lbl5);
             this.groupBox2.Controls.Add(this.lbl4);
             this.groupBox2.Controls.Add(this.lbl3);
             this.groupBox2.Controls.Add(this.Chart1);
@@ -202,10 +204,11 @@
             this.lbl4.BackColor = System.Drawing.Color.White;
             this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4.ForeColor = System.Drawing.Color.Black;
-            this.lbl4.Location = new System.Drawing.Point(622, 386);
+            this.lbl4.Location = new System.Drawing.Point(627, 357);
             this.lbl4.Name = "lbl4";
             this.lbl4.Size = new System.Drawing.Size(30, 18);
             this.lbl4.TabIndex = 6;
+            this.lbl4.Tag = "Chart1";
             this.lbl4.Text = "lbl1";
             // 
             // lbl3
@@ -215,10 +218,11 @@
             this.lbl3.BackColor = System.Drawing.Color.White;
             this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3.ForeColor = System.Drawing.Color.Black;
-            this.lbl3.Location = new System.Drawing.Point(622, 356);
+            this.lbl3.Location = new System.Drawing.Point(627, 327);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(30, 18);
             this.lbl3.TabIndex = 5;
+            this.lbl3.Tag = "Chart1";
             this.lbl3.Text = "lbl1";
             // 
             // Chart1
@@ -330,6 +334,20 @@
             this.toolTip1.BackColor = System.Drawing.Color.DodgerBlue;
             this.toolTip1.ForeColor = System.Drawing.Color.White;
             // 
+            // lbl5
+            // 
+            this.lbl5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lbl5.AutoSize = true;
+            this.lbl5.BackColor = System.Drawing.Color.White;
+            this.lbl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl5.ForeColor = System.Drawing.Color.Black;
+            this.lbl5.Location = new System.Drawing.Point(627, 385);
+            this.lbl5.Name = "lbl5";
+            this.lbl5.Size = new System.Drawing.Size(30, 18);
+            this.lbl5.TabIndex = 7;
+            this.lbl5.Tag = "Chart1";
+            this.lbl5.Text = "lbl1";
+            // 
             // DataManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -384,5 +402,6 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label lbl3;
         private System.Windows.Forms.Label lbl4;
+        private System.Windows.Forms.Label lbl5;
     }
 }

@@ -49,9 +49,9 @@ namespace PerfomanceManagement
         {
             DataTable dataTable = new DataTable();
 
-            using (MySqlCommand cmd = new MySqlCommand("SELECT `RBS`,DATE_FORMAT(Date,'%d/%m/%Y') AS Date,`Hour`,MAX(FRAMESLOST) AS FRAMESLOST FROM `tbldata` where Date = '"+txtRange1.Text+"' && Hour = '"+txtRange2.Text+"' GROUP BY RBS,Date", con))
+            using (MySqlCommand cmd = new MySqlCommand("SELECT `RBS`,DATE_FORMAT(Date,'%d/%m/%Y') AS Date,`Hour`,FRAMESLOST FROM tbldata where DATE_FORMAT(Date, '"+txtRange1.Text+"') && RBS = '"+txtObject.Text+"' GROUP BY RBS,Hour", con))
             {
-                cmd.CommandText = "SELECT `RBS`,DATE_FORMAT(Date,'%d/%m/%Y') AS Date,`Hour`,MAX(FRAMESLOST) AS FRAMESLOST FROM `tbldata`  where RBS = '" + txtObject.Text + "' && Hour = '"+txtRange2.Text+"' GROUP BY RBS,Date";
+                cmd.CommandText = "SELECT `RBS`,DATE_FORMAT(Date,'%d/%m/%Y') AS Date,`Hour`,FRAMESLOST FROM tbldata where DATE_FORMAT(Date, '" + txtRange1.Text + "') && RBS = '" + txtObject.Text + "' GROUP BY RBS,Hour";
                 con.Open();
                 MySqlDataReader reader = cmd.ExecuteReader();
                 dataTable.Load(reader);
@@ -75,6 +75,8 @@ namespace PerfomanceManagement
             txtObject.Text = "";
             txtRange1.Text = "";
             txtRange2.Text = "";
+            Chart1.ChartAreas[0].AxisX.ScaleView.ZoomReset();
+            Chart1.ChartAreas[0].AxisY.ScaleView.ZoomReset();
         }
         private void loadform()
         {
@@ -84,7 +86,9 @@ namespace PerfomanceManagement
                 designChart();
                 lbl3.Text = "";
                 lbl4.Text = "";
+                lbl5.Text = "";
                 Chart1.ChartAreas[0].AxisY.IsStartedFromZero = false;
+                Chart1.ChartAreas[0].AxisX.IsStartedFromZero = false;
                 Chart1.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
                 Chart1.ChartAreas[0].AxisY.ScaleView.Zoomable = true;
                 Chart1.MouseWheel += chart1_MouseWheel;
@@ -163,15 +167,17 @@ namespace PerfomanceManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Chart1.Series.Clear();
+            Chart1.Series.Clear();            
             try
             {
-                Chart1.DataBindCrossTable(GetDataSpecific().DefaultView, "RBS", "Date", "FRAMESLOST", "");
-                string query = "SELECT `RBS`,DATE_FORMAT(Date,'%d/%m/%Y') AS Date,`Hour`,MAX(FRAMESLOST) AS FRAMESLOST FROM `tbldata` where RBS = '" + txtObject.Text + "' && Hour = '" + txtRange2.Text + "' GROUP BY RBS,Date";
+                Chart1.DataBindCrossTable(GetDataSpecific().DefaultView, "RBS", "Hour", "FRAMESLOST", "");
+                string query = "SELECT `RBS`,DATE_FORMAT(Date,'%d/%m/%Y') AS Date,`Hour`,FRAMESLOST FROM tbldata where DATE_FORMAT(Date, '" + txtRange1.Text + "') && RBS = '" + txtObject.Text + "' GROUP BY RBS,Hour";
                 data.dgv(query, "", dgvTampil);
                 Chart1.Series[0].ChartType = SeriesChartType.Spline;
                 Chart1.Series[0].Color = Color.MediumPurple;                
                 con.Close();
+                Chart1.ChartAreas[0].AxisX.ScaleView.ZoomReset();
+                Chart1.ChartAreas[0].AxisY.ScaleView.ZoomReset();
             }
             catch(Exception ex)
             {
@@ -221,6 +227,7 @@ namespace PerfomanceManagement
             if (result.PointIndex > -1 && result.ChartArea != null)
             {
                 lbl3.Text = "FRAMESLOST: " + result.Series.Points[result.PointIndex].YValues[0].ToString();
+                lbl5.Text = "Hour: "+ result.Series.Points[result.PointIndex].XValue.ToString();
             }
         }
     }
